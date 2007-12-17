@@ -6,7 +6,7 @@
 Add your content here.
 
 
-= Details =
+== Create A Simple Class ==
 
 {{{
 // Animal Class - No Inheritance
@@ -30,6 +30,7 @@ whiskers.say( "Fish Please" );
 // Meow, Fish Please
 }}}
 
+== Create a Subclass With Inheritance ==
 
 {{{
 // Extending Animal to create Dog
@@ -49,3 +50,5 @@ fido.bark( 'I want Kibbles and Bits' );
 
 // alert => "Fido: Ruff! I want Kibbles and Bits"
 }}}
+
+== Using Binding ==
