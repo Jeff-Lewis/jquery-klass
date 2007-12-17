@@ -64,11 +64,11 @@ To demonstrate the regular Module Pattern and my modified version, I've created 
       }
     }
     me.init();
-    return $.limitKeys( me, 'say', 'howl' );
+    return { say: me.say, howl: me.howl };
   }
 }}}
 
-
+== Differences ==
 
 Although subtle, there are several important benefits to this pattern that (a) reduces the kinds of bugs you might encounter (b) makes playing easier and (c) makes the code more readable.
 
