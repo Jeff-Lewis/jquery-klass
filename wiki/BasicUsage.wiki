@@ -11,12 +11,22 @@ Add your content here.
 {{{
 // Base Class Animal call only say stuff
 Animal = $.klass({
+  init: function( type ){
+    this.type = type;
+  },
   say: function( msg ){
-    alert( msg );
+    alert( this.type + ': ' + msg );
   }
 })
 
-// Dog will say stuff with a noise and name
+fido = new Animal();
+fido.say( 'Ruff!' );
+// Alert => "Ruff!"
+}}}
+
+
+{{{
+// Extending Animal to create Dog
 Dog = $.klass( Animal, {
   // called automatically
   init: function( name ){
