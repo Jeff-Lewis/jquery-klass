@@ -7,7 +7,7 @@ Inspired by Douglas Crockford's articles on the Module Pattern with a healthy do
 The purpose of this article is to show you a variation on the standard !JavaScript module pattern. While this pattern works great, I found it hard to do agile programming with it. Some of the problems where:
 
   * The pattern is not self documenting so you need the comments
-  * Difficulty in knowing where to place init code
+  * Ambiguity in placement of 'constructor' code (placement differ depending on what constructor does)
   * Difficulty in knowing what to pass when you need to pass the object instance during initialization
   * Problems caused by different name spaces for public and private functions/variables:
   ** Converting a function or variable from public to private and visa versa is time consuming
