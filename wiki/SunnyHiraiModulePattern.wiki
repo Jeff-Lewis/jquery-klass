@@ -27,12 +27,15 @@ To demonstrate the regular Module Pattern and my modified version, I've created 
 
 {{{
   Animal = function( name ){
+
     // private variables
     var name = name;
+
     // private functions
     function output( msg ){
       alert( msg );
     }
+
     // public members
     return {
       say: function( msg ){
