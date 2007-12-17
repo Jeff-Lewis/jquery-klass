@@ -8,8 +8,6 @@ Add your content here.
 
 == Create A Simple Class ==
 
-  * *init* is special and called automatically during instantiation.
-
 {{{
 // Animal Class - No Inheritance
 Animal = $.klass({
@@ -21,6 +19,8 @@ Animal = $.klass({
   }
 })
 }}}
+
+  * *init* is special and called automatically during instantiation.
 
 == Using the Class ==
 
