@@ -11,17 +11,22 @@ Add your content here.
 {{{
 // Base Class Animal call only say stuff
 Animal = $.klass({
-  init: function( type ){
-    this.type = type;
+  init: function( sound ){
+    this.sound = sound;
   },
   say: function( msg ){
-    alert( this.type + ': ' + msg );
+    alert( this.sound + ', ' + msg );
   }
 })
 
-fido = new Animal();
-fido.say( 'Ruff!' );
-// Ruff!
+fido = new Animal( "Ruff" );
+whiskers = new Animal( "Meow" );
+
+fido.say( "Kibbles and Bits" );
+// Ruff, Kibbles and Bits
+
+whiskers.say( "Fish Please" );
+// Meow, Fish Please
 }}}
 
 
