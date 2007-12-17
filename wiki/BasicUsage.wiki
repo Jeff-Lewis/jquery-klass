@@ -8,7 +8,7 @@ Add your content here.
 
 == Create A Simple Class ==
 
-Note: *init* is called automatically during instantiation.
+  * *init* is special and called automatically during instantiation.
 
 {{{
 // Animal Class - No Inheritance
