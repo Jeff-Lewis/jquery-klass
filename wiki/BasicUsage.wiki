@@ -8,12 +8,14 @@ Add your content here.
 = Details =
 
 {{{
+// Base Class Animal call only say stuff
 Animal = $.klass({
   say: function( msg ){
     alert( msg );
   }
 })
 
+// Dog will say stuff with a noise and name
 Dog = $.klass( Animal, {
   // called automatically
   init: function( name ){
@@ -21,7 +23,7 @@ Dog = $.klass( Animal, {
     this.noise = 'Ruff! ';
   },
   say: function( msg ){
-    this.super( arguments, this.noise + msg );
+    this.super( arguments, this.name + ': ' + this.noise + msg );
   }
 })
 
