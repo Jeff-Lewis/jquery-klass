@@ -23,7 +23,7 @@ Dog = $.klass( Animal, {
     this.noise = 'Ruff! ';
   },
   say: function( msg ){
-    this.supe( arguments, this.name + ': ' + this.noise + msg );
+    this.up( arguments, this.name + ': ' + this.noise + msg );
   }
 })
 
