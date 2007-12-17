@@ -4,6 +4,31 @@
 
 Inspired by Douglas Crockford's articles on the Module Pattern with a healthy dosage of pragmatism added.
 
+=== Module Pattern ===
+
+{{{
+$.extend({
+  animal: function( name ){
+    var name = name;
+    function output( msg ){
+      alert( msg );
+    }
+    var me = {
+      say: function( msg ){
+        output( me.name + ': ' + msg );
+      },
+      howl: function( msg ){
+        output( me.name + ': awoooo... ' + msg );
+      }
+    }
+    return me;
+  }
+})
+}}}
+
+
+=== Sunny Hirai's Module Pattern ===
+
 {{{
 $.extend({
   animal: function( name ){
@@ -11,14 +36,14 @@ $.extend({
       init: function(){
         me.name = name;
       },
-      print: function( msg ){
+      output: function( msg ){
         alert( msg );
       },
       say: function( msg ){
-        me.print( me.name + ': ' + msg );
+        me.output( me.name + ': ' + msg );
       },
       howl: function( msg ){
-        me.print( me.name + ': awoooo... ' + msg );
+        me.output( me.name + ': awoooo... ' + msg );
       }
     }
     me.init();
@@ -27,6 +52,8 @@ $.extend({
 })
 }}}
 
+
+
 Although subtle, there are several important benefits to this pattern that (a) reduces the kinds of bugs you might encounter (b) makes playing easier and (c) makes the code more readable.
 
   # The first declaration is the object "me".
@@ -34,4 +61,6 @@ Although subtle, there are several important benefits to this pattern that (a) r
   # "me.init()" is called immediately after the declaration
   # "$.limitKeys" is called during the return
 
-== Reducing Kinds of Bugs ==
+== Comparison ==
+
+Let's take a look at the same code 
