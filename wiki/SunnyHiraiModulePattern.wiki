@@ -8,11 +8,11 @@ While the module pattern works well, it can be modified to increase code quality
 
 Some problems are:
 
-  * Ambiguity in where to place 'constructor' code (differs depending on what the constructor's role)
-  * Different ways to call public and private members means you have to remember two things: (1) The name of the member and (2) whether it is public or private.
-  * Since public/private members are scoped differently, it takes time to convert a member from public to private and visa versa. This is exasperated by the fact that you don't always know ahead of time whether a member should be public or private.
-  * The pattern is not self documenting and hence usually requires commenting
-  * The pattern is a little ugly (you know what I mean)
+  * Ambiguity in where to place 'constructor' code (differs depending on the constructor's role)
+  * Different ways to call public and private members means you have to remember the member's scope before referring to it.
+  * Since public/private members are declared differently, it takes time to convert a member from public to private and visa versa. This is exasperated by the fact that you don't always know ahead of time whether a member should be public or private.
+  * The pattern is not self documenting and prefers commenting
+  * The pattern is a little ugly (though some like its raggedness)
 
 === Animal Module ===
 
