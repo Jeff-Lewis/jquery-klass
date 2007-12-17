@@ -1,0 +1,30 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Add your content here.
+
+
+= Details =
+
+{{{
+Animal = $.class({
+  say: function( msg ){
+    alert( msg );
+  }
+})
+
+Dog = $.class( Animal, {
+  // called automatically
+  init: function( name ){
+    this.name = name;
+    this.noise = 'Ruff! ';
+  },
+  say: function( msg ){
+    this.super( arguments, this.noise + msg );
+  }
+})
+
+fido = new Dog();
+fido.bark( 'I want Kibbles and Bits' );
+}}}
