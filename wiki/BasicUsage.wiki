@@ -21,7 +21,7 @@ Animal = $.klass({
 
 fido = new Animal();
 fido.say( 'Ruff!' );
-// Alert => "Ruff!"
+// Ruff!
 }}}
 
 
