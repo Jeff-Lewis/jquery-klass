@@ -1,0 +1,22 @@
+#summary Sunny Hirai's Version of the Module Pattern
+
+= Sunny Hirai's Module Pattern =
+
+Based on Douglas Crockford's articles on the Module Pattern with a healthy dosage of pragmatism added.
+
+{{{
+$.extend({
+  animal: function( name ){
+    var me = {
+      init: function(){
+        me.name = name;
+      },
+      say: function( msg ){
+        alert( msg );
+      }
+    }
+    me.init();
+    return me;
+  }
+})
+}}}
