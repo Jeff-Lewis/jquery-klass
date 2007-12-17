@@ -71,9 +71,14 @@ To demonstrate the regular Module Pattern and my modified version, I've created 
     return { say: me.say, howl: me.howl }; // public methods
   }
 
-  // NOTE: Nice return {} alternate below for about 200 bytes of code.
-  // jQuery users could add it as a $.publish plugin
-  // return publish( me, 'say', 'howl' )
+  // NOTE: An alternate for "return {}" code below for about 200 bytes of code.
+  // jQuery users could add it as a $.publish plugin. See bottom of page for code.
+  //
+  // return publish( me, 'say', 'howl' );
+  //
+  // or
+  //
+  // return $publish( me, 'say', 'howl' );
 
 }}}
 
