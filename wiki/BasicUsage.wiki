@@ -22,7 +22,7 @@ Animal = $.klass({
 
   * *init* is special and called automatically during instantiation.
 
-== Instantiating Class ==
+== Instantiating and Using Class ==
 
 {{{
 fido = new Animal( "Ruff" );
