@@ -18,10 +18,10 @@ Some problems are:
 
 To demonstrate the regular Module Pattern and my modified version, I've created a simple animal class. It has the following members:
 
-* 'name' which is private
-* 'output' a private method to output text to the user
-* 'say' a public method
-* '
+  * 'name' which is private
+  * 'output' a private method to output text to the user
+  * 'say' a public method
+  * 'howl' a public method that calls 'say'
 
 === Module Pattern ===
 
@@ -45,12 +45,10 @@ To demonstrate the regular Module Pattern and my modified version, I've created 
   }
 }}}
 
-
 === Sunny Hirai's Module Pattern ===
 
 {{{
-$.extend({
-  animal: function( name ){
+  Animal = function( name ){
     var me = {
       init: function(){
         me.name = name;
@@ -68,7 +66,6 @@ $.extend({
     me.init();
     return $.limitKeys( me, 'say', 'howl' );
   }
-})
 }}}
 
 
