@@ -18,8 +18,11 @@ Animal = $.klass({
     alert( this.sound + ', ' + msg );
   }
 })
+}}}
 
-// Using the Class
+== Using the Class ==
+
+{{{
 fido = new Animal( "Ruff" );
 whiskers = new Animal( "Meow" );
 
