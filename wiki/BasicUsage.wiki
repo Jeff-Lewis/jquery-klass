@@ -8,6 +8,8 @@ Add your content here.
 
 == Create A Simple Class ==
 
+Note: The 'init' is called automatically during instantiation.
+
 {{{
 // Animal Class - No Inheritance
 Animal = $.klass({
