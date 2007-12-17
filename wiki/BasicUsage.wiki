@@ -8,13 +8,13 @@ Add your content here.
 = Details =
 
 {{{
-Animal = $.class({
+Animal = $.klass({
   say: function( msg ){
     alert( msg );
   }
 })
 
-Dog = $.class( Animal, {
+Dog = $.klass( Animal, {
   // called automatically
   init: function( name ){
     this.name = name;
