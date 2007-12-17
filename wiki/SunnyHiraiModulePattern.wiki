@@ -4,7 +4,7 @@
 
 The purpose of this article is to show you a variation on the standard !JavaScript module pattern introduced by Douglas Crockford.
 
-While the module pattern is a great pattern, it can be modified slightly to increase code quality, improve readability and reduce bug count.
+While the module pattern is a great pattern, it can be modified to increase code quality, improve readability and reduce obscure bugs.
 
 Some problems are:
 
