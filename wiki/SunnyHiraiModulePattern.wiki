@@ -64,11 +64,11 @@ To demonstrate the regular Module Pattern and my modified version, I've created 
         me.output( me.name + ': ' + msg );
       },
       howl: function( msg ){
-        me.output( me.name + ': awoooo... ' + msg );
+        me.say( 'awoooo... ' + msg );
       }
     }
     me.init();
-    return { say: me.say, howl: me.howl };
+    return { say: me.say, howl: me.howl }; // public methods
   }
 
   // NOTE: Nice return {} alternate below for about 200 bytes of code.
@@ -78,6 +78,12 @@ To demonstrate the regular Module Pattern and my modified version, I've created 
 }}}
 
 == Differences ==
+
+Now that you've seen the code, here are the benefits of the new module pattern.
+
+  # *Neat:* It's nice and neat and easier to read. It's easy to see what all the methods are because they are all together and nicely formatted. The module pattern is a little more efficient (less lines of code) but the private functions are declared quite differently from the public ones.
+  # *Constructor:* Where should the constructor code go in the module pattern? Is it before the public object declaration, after or both before and after. The answer is it depends on what it does. By convention, it's nice to have the constructor code at the top since it is the first thing that is done; however, what if the constructor needs to call a public method in the public object as part of its initialization? In that case, the constructor needs to go below the public object declaration. This is because the public method would otherwise not yet exist. While this isn't a big deal, as the complexity of the module grows, the harder it is to keep track of why some constructor methods are above and others below the public definition. This variation on the module pattern sidesteps all of it by defining all the members first including the constructor (which I've named 'init') and then simply executes 'me.init()'. This ensures that the 'me' object exists and all the methods exist, both public and private.
+  #
 
 Although subtle, there are several important benefits to this pattern that (a) reduces the kinds of bugs you might encounter (b) makes playing easier and (c) makes the code more readable.
 
