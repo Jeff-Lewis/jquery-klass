@@ -27,6 +27,8 @@ Dog = $.klass( Animal, {
   }
 })
 
-fido = new Dog();
+fido = new Dog( "Fido" );
 fido.bark( 'I want Kibbles and Bits' );
+
+// alert => "Fido: Ruff! I want Kibbles and Bits"
 }}}
