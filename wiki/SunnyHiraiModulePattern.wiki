@@ -69,7 +69,8 @@ To demonstrate the regular Module Pattern and my modified version, I've created 
     }
     me.init();
     return { say: me.say, howl: me.howl };
-    // NOTE: Nice alternate below if you include about 200 bytes of code
+    // NOTE: Nice alternate below if you include about 200 bytes of code.
+    // jQuery users could add it as a $.limitKeys plugin
     // return limitKeys( me, 'say', 'howl' )
   }
 }}}
