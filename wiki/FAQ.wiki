@@ -1,0 +1,15 @@
+#summary One-sentence summary of this page.
+
+= Klass FAQ =
+
+*Q. Why is the plugin called "klass" with a "k" instead of a "c"?*
+Unfortunately, "class" is a reserved word in ~JavaScript. This is also why the CSS class attribute is named "className" in ~JavaScript.
+
+*Q. Why do you have a method named "supe". Wouldn't super have been better?*
+Unfortunately, "super" is also a reserved word. My next choice would have been "parent" but this is used by the "DOM API" to refer to the "parent" of a frame.
+
+*Q. Why did you write yet another implementation of class?*
+(a) Because there wasn't a good implementation of a class plugin for jQuery that I could find (b) I wanted to guarantee there would be at least one good class plugin for jQuery I can use for my team's development of extendable classes and (c) I really wanted to contribute in an important way to the jQuery community. I have hope that this or a derivative will make it into core.
+
+*Q. Who is the author?*
+My name is Sunny Hirai, and I'm the President of with.us and the Chief Executive Office of ~MeZine, the developers of ~CityMax, one of the most popular website builders on the Internet. I wrote the code that ~CityMax rests upon (though it has been taken over long ago) and am building the Ruby-based framework we are developing our with.us projects on.
