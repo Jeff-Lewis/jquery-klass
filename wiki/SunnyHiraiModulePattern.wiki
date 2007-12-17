@@ -2,16 +2,17 @@
 
 = Sunny Hirai's Module Pattern =
 
-The purpose of this article is to show you a variation on the standard !JavaScript module pattern introduced by Douglas Crockford.
+The purpose of this article is to show you a useful variation on the !JavaScript module pattern introduced by Douglas Crockford.
 
-While the module pattern is a great pattern, it can be modified to increase code quality, improve readability and reduce obscure bugs.
+While the module pattern works well, it can be modified to increase code quality, improve readability and reduce some types of bugs.
 
 Some problems are:
 
-  * The pattern is not self documenting and hence usually requires commenting
-  * Ambiguity in where to place 'constructor' code (it differs depending on what the constructor does)
+  * Ambiguity in where to place 'constructor' code (differs depending on what the constructor's role)
   * Different ways to call public and private members means you have to remember two things: (1) The name of the member and (2) whether it is public or private.
   * Since public/private members are scoped differently, it takes time to convert a member from public to private and visa versa. This is exasperated by the fact that you don't always know ahead of time whether a member should be public or private.
+  * The pattern is not self documenting and hence usually requires commenting
+  * The pattern is a little ugly (you know what I mean)
 
 === Animal Module ===
 
@@ -33,15 +34,14 @@ To demonstrate the regular Module Pattern and my modified version, I've created 
       alert( msg );
     }
     // public members
-    var returnObject = {
+    return {
       say: function( msg ){
         output( name + ': ' + msg );
       },
       howl: function( msg ){
         returnObject.say( 'awoooo... ' + msg );
       }
-    }
-    return returnObject;
+    };
   }
 }}}
 
