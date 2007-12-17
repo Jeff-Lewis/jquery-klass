@@ -72,8 +72,8 @@ To demonstrate the regular Module Pattern and my modified version, I've created 
   }
 
   // NOTE: Nice return {} alternate below for about 200 bytes of code.
-  // jQuery users could add it as a $.limitKeys plugin
-  // return limitKeys( me, 'say', 'howl' )
+  // jQuery users could add it as a $.publish plugin
+  // return publish( me, 'say', 'howl' )
 
 }}}
 
@@ -87,19 +87,51 @@ Now that you've seen the code, here are the benefits of the new module pattern.
 
 Where should the constructor code go in the module pattern? Is it before the public object declaration, after or both before and after?
 
-The answer is it depends on what it does. By convention, it's nice to have the constructor code at the top since it is the first thing that is done; however, if the constructor calls a public method in the public object (e.g. 'say' or 'howl') then the constructor needs to go below. This is because the public methods do not exist until after they are declared.
+The answer is it depends on what it does. By convention, it's nice to have the constructor code at the top since it is the first thing that is done and therefore having it at the top is intuitive; however, if the constructor calls a public method in the public object (e.g. 'say' or 'howl') then the constructor needs to go below. This is because the public methods do not exist until after they are declared.
 
-This isn't a big deal when the module is small (as ours is), but as the complexity of the module grows, it becomes difficult to keep track of why some constructor methods are above and others below the public definition.
+Here are the code changes needed in the original Module pattern:
 
-The variation on the module pattern sidesteps all of this by defining all the members first including the constructor (which I've named 'init') and then executes 'me.init()'.
+{{{
+  Animal = function( name ){
 
-This ensures that the 'me' object and all its methods exist, both public and private.
+    // private variables
+    var name = name;
 
-This also solves the problem of having to send the 'me' object as a reference in the constructor. For example, let's say the 'me' object needs to register itself in an 'AnimalKingdom' module. It registers itself by sending a reference to itself to the 'AnimalKingdom' module.
+    // private functions
+    function output( msg ){
+      alert( msg );
+    }
+
+    // public members
+-    return {
++    var pub = {
+      say: function( msg ){
+        output( name + ': ' + msg );
+      },
+      howl: function( msg ){
+        returnObject.say( 'awoooo... ' + msg );
+      }
+    };
+
++   // constructor
++   pub.say( name + ' is born' );
+
++   return pub;
+
+  }
+}}}
+
+Note also that the 'output' private function is above the public members. It can be moved below the public members but must stay above the constructor. This bevy of rules is what adds to the confusion.
+
+This isn't a big deal when the module is small (as ours is), but as the complexity of the module grows, it becomes more difficult to keep track of the order of constructors and declarations.
+
+The variation on the module pattern sidesteps all of this by defining all the members (both public and private) first including the constructor (which I've named 'init') and then executes 'me.init()' at the very end. It is easy to read and intuitive to understand.
 
 === Last Minute Private Variables ===
 
-There are a few benefits and one caveat to creating a sub-object and releasing that as your public object. The first benefit is that during development, you can return the entire object and therefore every member is public. This is great during development because it makes it easy to inspect your object. When you are ready to release the code as production code, you choose at that time which methods should be kept private.
+There are a few benefits (and one gotcha) to creating a sub-object and using that as the public object.
+
+The first benefit is that during development, you can return the entire object and therefore every member is public. This is useful during development because it makes it easy to inspect your object. When you are ready to release the code as production code, you then choose which methods should be kept private. In fact, I find this more harmonious with the way I work. I want to get it working first and then figure out what I need to expose to the public.
 
 In our Animal example, let's say we wanted to make the 'say' method private. Here's the change in the new Module Pattern.
 
@@ -107,6 +139,14 @@ In our Animal example, let's say we wanted to make the 'say' method private. Her
 - return { say: me.say, howl: me.howl };
 + return { howl: me.howl };
 }}}
+
+or with the limitKeys() method available:
+
+{{{
+- return limitKeys( me, 'say', 'howl' );
++ return limitKeys( me, 'howl' );
+}}}
+
 
 In the original module pattern, this is the change.
 
@@ -122,32 +162,66 @@ In the original module pattern, this is the change.
 + say( 'awoooo... ' + msg );
 }}}
 
-In a real module, there could be more methods that call 'say' or whatever method you decide to change the scope of.
+When you make the change in the module pattern, you need to (a) rewrite the method to fit into the new way of declaring the method in the scope and (b) rewrite all the method calls.
+
+As the size of your module grows, the complexity increases.
 
 === Gotcha of Last Minute Private Variables ===
 
-One gotcha of returning a different object for public consumption is that values will not be accessible in the public object. For example, you might get a copy of the 'name' variable in the public object, but if you change the 'name' variable's value, it won't change in the 'me' object.
+One gotcha of returning a different object as a public object is that changing values in the public object won't actually change the 'me' values. For example, you might get a copy of the 'name' variable in the public object, but if you change the 'name' variable's value, it won't change in the 'me' object.
 
-The solution is to never expose variables in the public object. Although this is a gotcha, in some ways it encourages better Object Oriented Programming. All variables shall be accessed by getters and setters. In the short-run, I sometimes find this annoying but in the long run, getters and setters saves me and I've found I've always just started using them, even before I created this pattern.
+{{{
+  // the me object might look like this:
+  {
+    name: 'fido',
+    output: function(){...},
+    say: function(){...},
+    howl: function(){...}
+  }
+  // the public object might look like this if you exposed 'name'
+  {
+    name: 'fido',
+    say: function(){...},
+    howl: function(){...}
+  }
+  // if you change the public object's name, you WON'T change the
+  // 'me' object's name.
+}}}
+
+The solution is to never expose variables only methods in the public object. Although this is a gotcha, it encourages better Object Oriented Programming. All variables can still be accessed by getters and setters.
+
+In the short-run, I sometimes find this annoying but in the long run, getters and setters saves me. I've found I've just started always using them, even before I created this pattern. In fact, I discovered this gotcha while writing, not during usage.
 
 === Better Iterative Development ===
 
-Although subtle, there are several important benefits to this pattern that (a) reduces the kinds of bugs you might encounter (b) makes playing easier and (c) makes the code more readable.
-
-  # The first declaration is the object "me".
-  # The first method in "me" is "init"
-  # "me.init()" is called immediately after the declaration
-  # "$.limitKeys" is called during the return
-
 == Comparison ==
 
-Let's take a look at the same code 
+The 'publish' code for JavaScript and for jQuery:
 
-  function limitKeys( source ){
-    var dest = {}, key;
+{{{
+// Pure JavaScript version
+function publish( source ){
+  var dest = {}, key, member;
+  for (var i=1;i<arguments.length;i++){
+    key = arguments[i];
+    member = source[ key ];
+    if (member instanceof Function) throw "You cannot publish non-functions.";
+    dest[ key ] = member;
+  }
+  return dest;
+}
+
+// jQuery version
+$.extend({
+  publish: function( source ){
+    var dest = {}, key, member;
     for (var i=1;i<arguments.length;i++){
       key = arguments[i];
-      dest[ key ] = source[ key ];
+      member = source[ key ];
+      if (member instanceof Function) throw "You cannot publish non-functions.";
+      dest[ key ] = member;
     }
     return dest;
   }
+})
+}}}
