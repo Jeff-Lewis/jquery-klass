@@ -51,6 +51,16 @@ To demonstrate the regular Module Pattern and my modified version, I've created 
 === Sunny Hirai's Module Pattern ===
 
 {{{
+
+  function limitKeys( source ){
+    var dest = {}, key;
+    for (var i=1;i<arguments.length;i++){
+      key = arguments[i];
+      dest[ key ] = source[ key ];
+    }
+    return dest;
+  }
+
   Animal = function( name ){
     var me = {
       init: function(){
