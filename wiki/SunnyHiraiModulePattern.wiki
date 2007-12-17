@@ -6,6 +6,7 @@ Inspired by Douglas Crockford's articles on the Module Pattern with a healthy do
 
 The purpose of this article is to show you a variation on the standard !JavaScript module pattern. While this pattern works great, I found it hard to do agile programming with it. Some of the problems where:
 
+  * The pattern is not self documenting so you often see lots of comments
   * Difficulty in knowing where to place init code
   * Difficulty in knowing what to pass when you need to pass the object instance during initialization
   * Problems caused by different name spaces for public and private functions/variables:
@@ -18,10 +19,13 @@ The purpose of this article is to show you a variation on the standard !JavaScri
 {{{
 $.extend({
   animal: function( name ){
+    // private variables
     var name = name;
+    // private functions
     function output( msg ){
       alert( msg );
     }
+    // public members
     var returnObject = {
       say: function( msg ){
         output( name + ': ' + msg );
