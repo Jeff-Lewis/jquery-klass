@@ -11,11 +11,49 @@ For consistency, almost all wiki code is accomplished by doubling up characters.
 ''Italic''
 __underline__
 ~~strike~~
-[[link]]
-``string literal``
+``code``
 ^^superscript^^
 ,,subscript,,
 }}}
 
-This is `inline code` looking stuff
-,,subscript,,
+== Links ==
+
+{{{
+[[linkToWikiPage]]
+[[www.google.com]]
+[[Google|www.google.com]]
+}}}
+
+== Images ==
+
+{{{
+}}}
+
+== Headings ==
+
+I like the ! (bang) style headings because they are easy to type and fairly easy to read. You don't have problems like matching beginning == with ending ones. You also don't have the problem with underline versions where you need to adjust the length of the underlines when you change the heading. Strictly speaking you don't have to but it just looks and feels wrong.
+
+{{{
+!Heading Level 1
+!!Heading Level 2
+!!!Heading Level 3
+}}}
+
+== Bullets ==
+
+{{{
+* Normal
+* Bullets
+
+# Numbered
+# Bullets
+}}}
+
+== Tables ==
+
+{{{
+|description|price|quantity|total|
+|T-shirt|5.00|2|25.00|
+|Socks|1.00|2|2.00|
+|Total|||27.00|
+}}}
