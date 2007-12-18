@@ -2,7 +2,9 @@
 
 = Wiki Code =
 
-For consistency
+== Styles ==
+
+For consistency, almost all wiki code is accomplished by doubling up characters. This removes the confusion in most wiki markup code where some items are doubled and some are single. This also removes the parsing problems for many edge cases like * being the start of a bullet or the bolding of a few characters (e.g. this is present in Google code markup).
 
 {{{
 **bold**
@@ -11,7 +13,8 @@ __underline__
 ~~strike~~
 [[link]]
 ``string literal``
-
+^^superscript^^
+,,subscript,,
 }}}
 
 This is `inline code` looking stuff
