@@ -20,14 +20,28 @@ __underline__
 
 === Links ===
 
+Anything in double square brackets is made into a link
+
 {{{
 [[linkToWikiPage]]
 [[www.google.com]]
 [[Google|www.google.com]]
+}}}
+
+Some things that look like links are automatically converted to links
+
+{{{
 http://www.google.com/
 user@email.com
+}}}
+
+You can link to place in a page by placing them in double-hashes (#). "top" is always reserved for the top of the page. Headings are automatically converted into internal link destinations.
+
+{{{
 ##top## returns user to top
-##My Heading## jumps user to heading with the given name. Not case sensitive.
+!My Heading
+##My Heading## jumps user to the "My Heading" heading.
+##my heading## is case insensitive for ease of use.
 }}}
 
 === Special Objects ===
