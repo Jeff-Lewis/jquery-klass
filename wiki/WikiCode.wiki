@@ -16,6 +16,7 @@ __underline__
 ``code``
 ^^superscript^^
 ,,subscript,,
+||inline box||
 }}}
 
 === Links ===
