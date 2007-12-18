@@ -64,6 +64,14 @@ I like the ! (bang) style headings because they are easy to type and fairly easy
 |Total|||27.00|
 }}}
 
+=== Dividers ===
+
+A single dash or a line with only dashes will convert into an <hr> divider.
+
+{{{
+-
+}}}
+
 == Writing the Parser ==
 
 The nice thing about these rules is they tend not to overlap. When writing the parser, one should do all the line based parsing first.
