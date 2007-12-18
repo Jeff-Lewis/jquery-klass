@@ -2,7 +2,7 @@
 
 = Wiki Code =
 
-
+For consistency
 
 {{{
 **bold**
@@ -15,3 +15,4 @@ __underline__
 }}}
 
 This is `inline code` looking stuff
+,,subscript,,
