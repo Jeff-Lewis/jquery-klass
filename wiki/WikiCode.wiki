@@ -31,7 +31,9 @@ __underline__
 {{{
 }}}
 
-== First Character(s) On Line Based Formatting ==
+== Line Based Formatting ==
+
+These types of formatting are based on the first characters that are present on a line. In most cases, it looks for the first character on a line with the exception of bullets which are the first two characters (a symbol and then a space).
 
 === Headings ===
 
@@ -61,3 +63,7 @@ I like the ! (bang) style headings because they are easy to type and fairly easy
 |Socks|1.00|2|2.00|
 |Total|||27.00|
 }}}
+
+== Writing the Parser ==
+
+The nice thing about these rules is they tend not to overlap. When writing the parser, one should do all the line based parsing first.
