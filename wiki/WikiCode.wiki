@@ -4,7 +4,7 @@
 
 == Inline Formatting ==
 
-== Styles ==
+=== Styles ===
 
 For consistency, almost all wiki code is accomplished by doubling up characters. This removes the confusion in most wiki markup code where some items are doubled and some are single. This also removes the parsing problems for many edge cases like `*` being the start of a bullet or the bolding of a few characters (e.g. this is present in Google code markup).
 
@@ -18,7 +18,7 @@ __underline__
 ,,subscript,,
 }}}
 
-== Links ==
+=== Links ===
 
 {{{
 [[linkToWikiPage]]
@@ -26,14 +26,14 @@ __underline__
 [[Google|www.google.com]]
 }}}
 
-== Images ==
+=== Images ===
 
 {{{
 }}}
 
-= First Character(s) On Line Based Formatting
+== First Character(s) On Line Based Formatting ==
 
-== Headings ==
+=== Headings ===
 
 I like the ! (bang) style headings because they are easy to type and fairly easy to read. You don't have problems like matching beginning == with ending ones. You also don't have the problem with underline versions where you need to adjust the length of the underlines when you change the heading. Strictly speaking you don't have to but it just looks and feels wrong.
 
@@ -43,7 +43,7 @@ I like the ! (bang) style headings because they are easy to type and fairly easy
 !!!Heading Level 3
 }}}
 
-== Bullets ==
+=== Bullets ===
 
 {{{
 * Normal
@@ -53,7 +53,7 @@ I like the ! (bang) style headings because they are easy to type and fairly easy
 # Bullets
 }}}
 
-== Tables ==
+=== Tables ===
 
 {{{
 |description|price|quantity|total|
