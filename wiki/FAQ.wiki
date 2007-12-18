@@ -4,14 +4,22 @@
 
 *Q. Why is the plugin called "klass" with a "k" instead of a "c"?*
 
-"class" is a reserved word in !JavaScript. Same as why the CSS "class" property is named "className" in Javascript.
+"class" is a reserved word in !JavaScript.
 
 *Q. Why do you have a method named "supe". Wouldn't super have been better?*
 
-Unfortunately, "super" is also a reserved word. My next choice would have been "parent" but this is used by the "DOM API" to refer to the "parent" of a frame.
+"super" is also a reserved word in !JavaScript. My next choice was "parent" but this is used by the "DOM" to refer to the parent window of a frame. Practically speaking, they probably wouldn't clash but somebody might want to refer to the parent window as 'this.parent' in which case it would kill the 'this.parent' method.
 
-*Why do you always have to pass the word 'arguments' to call a method in the superclass when using this.up()*
-This is an idea from Joshua Gertzen's excellent article on "Object Oriented Super Class Method Calling with JavaScript." In fact, there are other ways to accomplish the same thing including the method used in the !JavaScript Prototype framework. I would suggest the Prototype model is cleaner to read but just as difficult understand; however, there are two reasons why I went for this model (a) performance. The Prototype model requires you to run a regular expression which tend to be CPU intensive and (b) code size. Attaching a reference to a function results in smaller code size. Together, these two ideas matched better with jQuery fundamentals.
+*Why do you always have to pass 'arguments' to call a method in the superclass when using this.up()*
+This is an idea from Joshua Gertzen's excellent article on "Object Oriented Super Class Method Calling with JavaScript." There are other ways to accomplish the same thing including a neat method used in the !JavaScript Prototype framework.
+
+The Prototype model is cleaner to read but just as difficult to understand (in Prototype's model, you need to add a $super argument on the receiving method, in Klass you need to add an 'arguments' argument in the calling method).
+
+There are two reasons why I went for this model
+
+(a) performance. The Prototype model requires you to run a regular expression which tend to be CPU intensive
+
+(b) code size. Attaching a reference to a function results in smaller code size. Together, these two ideas matched better with jQuery fundamentals.
 
 *Q. Why did you write yet another implementation of class?*
 
