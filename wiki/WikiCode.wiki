@@ -1,0 +1,17 @@
+#summary Unrelated to jQuery Klass but just needed a place to put it for now
+
+= Wiki Code =
+
+
+
+{{{
+**bold**
+''Italic''
+__underline__
+~~strike~~
+[[link]]
+``string literal``
+
+}}}
+
+This is ``inline code`` looking stuff
