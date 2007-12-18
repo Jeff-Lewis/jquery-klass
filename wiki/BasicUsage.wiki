@@ -40,9 +40,11 @@ Dog = $.klass( Animal, {
   // called automatically
   init: function( name ){
     this.name = name;
-    this.noise = 'Ruff! ';
+    this.up( 'Woof Woof' );
   },
   say: function( msg ){
+    // the word 'arguments' always has to be passed in as is.
+    // To find out why, see the FAQ in this wiki under 'up'
     this.up( arguments, this.name + ': ' + this.noise + msg );
   }
 })
