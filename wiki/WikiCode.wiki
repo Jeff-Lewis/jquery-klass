@@ -20,7 +20,9 @@ __underline__
 
 === Links ===
 
-Anything in double square brackets is made into a link
+Anything in double square brackets is made into a link.
+
+Do not support camel cased wiki links. I frickin' HATE wiki links and think this is the worst commonly adopted wiki markup practice on the planet. I have to escape my company name !MeZine and the language !JavaScript all the time. It's friggin ridiculous. Furthermore, there are so many camel cased words in common use today.
 
 {{{
 [[linkToWikiPage]]
@@ -33,6 +35,8 @@ Some things that look like links are automatically converted to links
 {{{
 http://www.google.com/
 user@email.com
+
+but NOT: IHateCamelCaseWikiLinks
 }}}
 
 You can link to place in a page by placing them in double-hashes (#). "top" is always reserved for the top of the page. Headings are automatically converted into internal link destinations.
@@ -46,6 +50,8 @@ You can link to place in a page by placing them in double-hashes (#). "top" is a
 
 === Special Objects ===
 
+Depending on the page, special objects can be included in a page. Special objects are included by using the double-dollar signs $$. I chose this because they show you the money with a full object.
+
 {{{
 $$contents$$
 $$whatsnew$$
@@ -54,6 +60,7 @@ $$whatsnew$$
 === Images ===
 
 {{{
+
 }}}
 
 == Line Based Formatting ==
@@ -100,3 +107,13 @@ A single dash or a line with only dashes will convert into an <hr> divider.
 == Writing the Parser ==
 
 The nice thing about these rules is they tend not to overlap. When writing the parser, one should do all the line based parsing first.
+
+== Symbols Never To Use ==
+
+Anything mathematical. They are too easily and too often used in programming languages and even natural language when present within a line. I've made the exception for line based formatting (the divider is a dash) because this is uncommon. But, for example, c++ is common.
+
+{{{
+-
++
+=
+}}}
