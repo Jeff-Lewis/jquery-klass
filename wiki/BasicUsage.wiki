@@ -11,6 +11,8 @@ Animal = $.klass({
   },
   say: function( msg ){
     alert( this.sound + ', ' + msg );
+    // or for those with firebug (if you don't have it, get it!)
+    // console.log( this.sound + ', ' + msg );
   }
 })
 }}}
