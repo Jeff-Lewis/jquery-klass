@@ -24,6 +24,17 @@ __underline__
 [[linkToWikiPage]]
 [[www.google.com]]
 [[Google|www.google.com]]
+http://www.google.com/
+user@email.com
+##top## returns user to top
+##My Heading## jumps user to heading with the given name. Not case sensitive.
+}}}
+
+=== Special Objects ===
+
+{{{
+$$contents$$
+$$whatsnew$$
 }}}
 
 === Images ===
