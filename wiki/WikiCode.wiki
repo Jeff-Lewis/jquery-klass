@@ -43,8 +43,7 @@ You can link to place in a page by placing them in double-hashes (#). "top" is a
 
 {{{
 ##top## returns user to top
-!My Heading
-##My Heading## jumps user to the "My Heading" heading.
+##My Heading## jumps user to the heading with text "My Heading"
 ##my heading## is case insensitive for ease of use.
 }}}
 
