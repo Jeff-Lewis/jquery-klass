@@ -13,6 +13,7 @@
 My next choice is "parent" but this is used by the "DOM" to refer to the parent window of a frame. Practically speaking, they probably wouldn't clash but somebody might want to refer to the parent window as 'this.parent' in which case it would kill the 'this.parent' method.
 
 *Why do you have to pass 'arguments' to call a method in the superclass when using this.up()*
+
 This is an idea from Joshua Gertzen's excellent article on "Object Oriented Super Class Method Calling with JavaScript." There are other ways to accomplish the same thing including a neat method used in the !JavaScript Prototype framework.
 
 The Prototype model is cleaner to read but just as difficult to understand (in Prototype's model, you need to add a $super argument on the receiving method, in Klass you need to add an 'arguments' argument in the calling method).
