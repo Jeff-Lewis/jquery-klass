@@ -60,6 +60,13 @@ $$contents$$
 $$whatsnew$$
 }}}
 
+Maybe
+
+{{{
+((contents))
+((whatsnew))
+}}}
+
 === Images ===
 
 {{{
