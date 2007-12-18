@@ -8,7 +8,9 @@
 
 *Why do you have a method named "supe". Wouldn't super have been better?*
 
-"super" is also a reserved word in !JavaScript. My next choice was "parent" but this is used by the "DOM" to refer to the parent window of a frame. Practically speaking, they probably wouldn't clash but somebody might want to refer to the parent window as 'this.parent' in which case it would kill the 'this.parent' method.
+"super" is also a reserved word in !JavaScript.
+
+My next choice is "parent" but this is used by the "DOM" to refer to the parent window of a frame. Practically speaking, they probably wouldn't clash but somebody might want to refer to the parent window as 'this.parent' in which case it would kill the 'this.parent' method.
 
 *Why do you have to pass 'arguments' to call a method in the superclass when using this.up()*
 This is an idea from Joshua Gertzen's excellent article on "Object Oriented Super Class Method Calling with JavaScript." There are other ways to accomplish the same thing including a neat method used in the !JavaScript Prototype framework.
