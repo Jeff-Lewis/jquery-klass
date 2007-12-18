@@ -112,7 +112,16 @@ I like the ! (bang) style headings because they are easy to type and fairly easy
 A single dash or a line with only dashes will convert into an <hr> divider.
 
 {{{
--
+--
+}}}
+
+== Multiline or Block Based Formatting ==
+
+{{{
+==
+Preformatted verbatim text goes within
+the double == lines.
+==
 }}}
 
 == Writing the Parser ==
