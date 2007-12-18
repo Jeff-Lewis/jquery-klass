@@ -22,7 +22,7 @@ __underline__
 
 Anything in double square brackets is made into a link.
 
-Do not support camel cased wiki links. I frickin' HATE wiki links and think this is the worst commonly adopted wiki markup practice on the planet. I have to escape my company name !MeZine and the language !JavaScript all the time. It's friggin ridiculous. Furthermore, there are so many camel cased words in common use today.
+Do not support camel cased wiki links. I frickin' HATE wiki links and think this is the worst commonly adopted wiki markup practice. I have to escape my company name !MeZine and the language !JavaScript all the time. There are so many camel cased words in common use today.
 
 {{{
 [[linkToWikiPage]]
