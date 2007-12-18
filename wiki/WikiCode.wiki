@@ -41,6 +41,8 @@ but NOT: IHateCamelCaseWikiLinks
 
 You can link to place in a page by placing them in double-hashes (#). "top" is always reserved for the top of the page. Headings are automatically converted into internal link destinations.
 
+_Don't love it_
+
 {{{
 ##top## returns user to top
 ##My Heading## jumps user to the heading with text "My Heading"
@@ -50,6 +52,8 @@ You can link to place in a page by placing them in double-hashes (#). "top" is a
 === Special Objects ===
 
 Depending on the page, special objects can be included in a page. Special objects are included by using the double-dollar signs $$. I chose this because they show you the money with a full object.
+
+_Don't love this either_
 
 {{{
 $$contents$$
