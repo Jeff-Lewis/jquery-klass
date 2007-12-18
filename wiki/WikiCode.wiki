@@ -14,4 +14,4 @@ __underline__
 
 }}}
 
-This is ``inline code`` looking stuff
+This is `inline code` looking stuff
