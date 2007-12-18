@@ -1,10 +1,5 @@
-#summary One-sentence summary of this page.
+#summary Basic Usage of Klass
 #labels Featured
-
-= Introduction =
-
-Add your content here.
-
 
 == A Simple Class ==
 
