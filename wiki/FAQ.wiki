@@ -10,6 +10,9 @@
 
 Unfortunately, "super" is also a reserved word. My next choice would have been "parent" but this is used by the "DOM API" to refer to the "parent" of a frame.
 
+*Why do you always have to pass the word 'arguments' to call a method in the superclass when using this.up()*
+This is an idea from Joshua Gertzen's excellent article on "Object Oriented Super Class Method Calling with JavaScript." In fact, there are other ways to accomplish the same thing including the method used in the !JavaScript Prototype framework. I would suggest the Prototype model is cleaner to read but just as difficult understand; however, there are two reasons why I went for this model (a) performance. The Prototype model requires you to run a regular expression which tend to be CPU intensive and (b) code size. Attaching a reference to a function results in smaller code size. Together, these two ideas matched better with jQuery fundamentals.
+
 *Q. Why did you write yet another implementation of class?*
 
 (a) Because there wasn't a good implementation of a class plugin for jQuery that I could find (b) I wanted to guarantee there would be at least one good class plugin for jQuery I can use for my team's development of extendable classes and (c) I really wanted to contribute in an important way to the jQuery community. I have hope that this or a derivative will make it into core.
