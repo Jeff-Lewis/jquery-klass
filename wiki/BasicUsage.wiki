@@ -25,26 +25,26 @@ fido.say( "Kibbles and Bits" );
 // Ruff, Kibbles and Bits
 }}}
 
-== Create a Subclass With Inheritance ==
+== Subclass With Inheritance ==
 
 {{{
 // Extending Animal to create Dog
 Dog = $.klass( Animal, {
   init: function( name ){
     this.name = name;
-    this.up( 'Woof Woof' ); // call superclass
+    this.up( arguments, 'Woof Woof' );
   },
   say: function( msg ){
-    // the word 'arguments' always has to be passed in as is.
-    // To find out why, see the FAQ in this wiki under 'up'
     this.up( arguments, this.name + ': ' + this.noise + msg );
   }
 })
 
 fido = new Dog( "Fido" );
 fido.bark( 'I want Kibbles and Bits' );
-
 // alert => "Fido: Ruff! I want Kibbles and Bits"
 }}}
+
+  * this.up calls superclass
+  * 'arguments' must be passed in. Ugly but lightest way to get code superclass calling to work.
 
 == Using Binding ==
