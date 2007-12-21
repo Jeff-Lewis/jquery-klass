@@ -1,6 +1,14 @@
 #summary Unrelated to jQuery Klass but just needed a place to put it for now
 
-= Wiki Code =
+= Solar Markup Language (SML) =
+
+== Goals ==
+
+  * Simple, consistent and easy to remember
+  * Easy to write a parser (for fast adoption)
+  * Quick to parse (many of the rules are consistent so very few exceptional cases).
+  * Have rules for how it should behave when there is potentially conflicting syntax. The implementation should NOT be the rules. Syntax rules should be submittable as a W3C standard.
+  * You can write rules about SML in SML
 
 == Inline Formatting ==
 
