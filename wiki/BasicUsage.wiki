@@ -4,7 +4,6 @@
 == A Simple Class ==
 
 {{{
-// Animal Class - No Inheritance
 Animal = $.klass({
   init: function( sound ){
     this.sound = sound;
@@ -15,7 +14,7 @@ Animal = $.klass({
 })
 }}}
 
-  * *init* is special and called automatically during instantiation.
+  * *init* is called automatically during instantiation.
 
 == Instantiating and Using Class ==
 
