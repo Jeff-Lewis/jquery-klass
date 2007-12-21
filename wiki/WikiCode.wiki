@@ -132,7 +132,10 @@ The nice thing about these rules is they tend not to overlap. When writing the p
 Anything mathematical. They are too easily and too often used in programming languages and even natural language when present within a line. I've made the exception for line based formatting (the divider is a dash) because this is uncommon. But, for example, c++ is common.
 
 {{{
--
-+
-=
+--
+++
+==
+{{
+}}
+Double parantheses can appear in code easily so don't use it to display code like Google does. They use {{{ which is actually uncommon but our goal is to standardized on two of everything.
 }}}
