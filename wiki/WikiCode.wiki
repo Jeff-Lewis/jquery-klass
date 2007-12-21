@@ -60,16 +60,7 @@ _Don't love it_
 
 === Special Objects ===
 
-Depending on the page, special objects can be included in a page. Special objects are included by using the double-dollar signs $$. I chose this because they show you the money with a full object.
-
-_Don't love this either_
-
-{{{
-$$contents$$
-$$whatsnew$$
-}}}
-
-Maybe
+Depending on the page, special objects can be included in a page. Special objects are included by using double parantheses. I chose this because they show you the money with a full object.
 
 {{{
 ((contents))
