@@ -14,19 +14,15 @@ Animal = $.klass({
 })
 }}}
 
-  * *init* is called automatically during instantiation.
+  * *init* called automatically during instantiation.
 
 == Instantiating and Using Class ==
 
 {{{
 fido = new Animal( "Ruff" );
-whiskers = new Animal( "Meow" );
 
 fido.say( "Kibbles and Bits" );
 // Ruff, Kibbles and Bits
-
-whiskers.say( "Fish Please" );
-// Meow, Fish Please
 }}}
 
 == Create a Subclass With Inheritance ==
@@ -34,10 +30,9 @@ whiskers.say( "Fish Please" );
 {{{
 // Extending Animal to create Dog
 Dog = $.klass( Animal, {
-  // called automatically
   init: function( name ){
     this.name = name;
-    this.up( 'Woof Woof' );
+    this.up( 'Woof Woof' ); // call superclass
   },
   say: function( msg ){
     // the word 'arguments' always has to be passed in as is.
