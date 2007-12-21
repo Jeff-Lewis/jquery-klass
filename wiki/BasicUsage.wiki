@@ -28,7 +28,6 @@ fido.say( "Kibbles and Bits" );
 == Subclass With Inheritance ==
 
 {{{
-// Extending Animal to create Dog
 Dog = $.klass( Animal, {
   init: function( name ){
     this.name = name;
