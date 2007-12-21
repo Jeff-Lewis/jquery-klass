@@ -5,7 +5,7 @@
 == Goals ==
 
   * Simple, consistent and easy to remember
-  * Easy to write a parser (for fast adoption)
+  * Easy to write a parser (will speed adoption)
   * Quick to parse (many of the rules are consistent so very few exceptional cases).
   * Have rules for how it should behave when there is potentially conflicting syntax. The implementation should NOT be the rules. Syntax rules should be submittable as a W3C standard.
   * You can write rules about SML in SML
