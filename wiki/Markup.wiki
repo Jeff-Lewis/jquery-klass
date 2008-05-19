@@ -1,4 +1,4 @@
-=Caffeine - Go Markup Bullets=
+= Caffeine - Go Markup Bullets =
 
 Approaches to parsing nested markup like bullets, numbered lists and indented code. Must handle the following.
 
@@ -14,7 +14,7 @@ Approaches to parsing nested markup like bullets, numbered lists and indented co
 * multi-level outdent
 }}}
 
-==Nested Rule Extensions==
+== Nested Rule Extensions ==
 
   # name: ul
   # regex: {{{(?<=\n|\A)(\s*[*]+\s.*?)\n\s*\n+}}}
@@ -33,7 +33,9 @@ Cons
 
   * Does not support UL and OL mixed bullets
 
-==Nested Rule Extensions==
+== Nested Grammar (though experiment) ==
+
+We need to make a grammar that has a multiple rules to differentiate OL and UL lists.
 
   # name: ul
   # regex: {{{(?<=\n|\A)(\s*[*]+\s.*?)\n\s*\n+}}}
@@ -55,7 +57,7 @@ Cons
 
 
 
-==Reparse==
+== Reparse ==
 
   # Use a regexp to capture and parse one indent level at a time.
   # The problem is that this requires the date in a multiple match. e.g. {{{(<=\n)([*] (.*))*}}}
@@ -65,6 +67,7 @@ Cons
 Pros
  
   * Only one grammar and no new rules
+  * Supports mixed bullets UL and OL
 
 Cons
 
