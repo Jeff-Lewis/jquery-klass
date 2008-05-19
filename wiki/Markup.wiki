@@ -27,3 +27,7 @@ Weaknesses
 *** outdent
 * multi-level outdent
 }}}
+
+  # Use a regexp to capture and parse one indent level at a time.
+  # The problem is that this requires the date in a multiple match. e.g. {{{(<=\n)([*] (.*))*}}}
+  # We want the second match to return ALL of the sub-matches but it only returns the last one
