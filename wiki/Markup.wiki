@@ -35,7 +35,7 @@ Weaknesses
   # Use a regexp to capture and parse one indent level at a time.
   # The problem is that this requires the date in a multiple match. e.g. {{{(<=\n)([*] (.*))*}}}
   # We want the second match to return ALL of the sub-matches but it only returns the last one
-  # The only way around this that I can think of is to parse the regex and handle it programmatically. That is, take the regex, find the {{(regex)*}} part and turn it into multiple match statements.
+  # The only way around this that I can think of is to parse the regex and handle it programmatically. That is, take the regex, find the {{{(regex)*}}} part and turn it into multiple match statements.
 
 Pros
  
