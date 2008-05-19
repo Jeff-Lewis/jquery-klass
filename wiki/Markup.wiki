@@ -16,7 +16,7 @@ Approaches to parsing nested markup like bullets, numbered lists and indented co
 
 ==Nested Grammar==
 
-  # Use a itemize_regex to convert code into individual items.
+  # Use a itemize_regex to convert code into items.
   # Use a depth_regex to find depth of each item
   # Use a nest_html to determine the nesting html (e.g. "&lt;ul&gt;$1&lt;/ul&gt;"
   # Use a item_html to determine the item html (e.g. "&lt;li&gt;$1&lt;/li&gt;"
