@@ -27,11 +27,33 @@ Approaches to parsing nested markup like bullets, numbered lists and indented co
 Pros
 
   * Easy to write grammar
+  * No need to add new grammar
 
-Weaknesses
+Cons
 
-  * Need two grammars
-  * Can't handle different bullets
+  * Does not support UL and OL mixed bullets
+
+==Nested Rule Extensions==
+
+  # name: ul
+  # regex: {{{(?<=\n|\A)(\s*[*]+\s.*?)\n\s*\n+}}}
+  # template: $1
+  # item_regex: {{{match start with * + any lines that don't start with *}}}
+  # item_template: e.g. {{{<li>$1</li>}}}
+  # nest_regex: {{{match start with * but do not include the first * in match}}}
+  # nest_template: e.g. {{{<ul>$1</ul>}}}
+
+Pros
+
+  * Easy to write grammar
+  * No need to add new grammar
+
+Cons
+
+  * Does not support UL and OL mixed bullets
+
+
+
 
 ==Reparse==
 
