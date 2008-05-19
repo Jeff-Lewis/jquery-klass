@@ -17,4 +17,13 @@ Weaknesses
 ==Reparse==
 
 {{{
+* bullet
+* same level
+  * optional spaces okay
+* hanging lines
+  are okay
+** indent
+**** multi-level indent
+*** outdent
+* multi-level outdent
 }}}
