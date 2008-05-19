@@ -1,6 +1,18 @@
 =Caffeine - Go Markup Bullets=
 
-Approaches to parsing nested markup like bullets, numbered lists and indented code.
+Approaches to parsing nested markup like bullets, numbered lists and indented code. Must handle the following.
+
+{{{
+* bullet
+* same level
+  * optional spaces okay
+* hanging lines
+  are okay
+** indent
+**** multi-level indent
+*** outdent
+* multi-level outdent
+}}}
 
 ==Nested Grammar==
 
@@ -16,18 +28,16 @@ Weaknesses
 
 ==Reparse==
 
-{{{
-* bullet
-* same level
-  * optional spaces okay
-* hanging lines
-  are okay
-** indent
-**** multi-level indent
-*** outdent
-* multi-level outdent
-}}}
-
   # Use a regexp to capture and parse one indent level at a time.
   # The problem is that this requires the date in a multiple match. e.g. {{{(<=\n)([*] (.*))*}}}
   # We want the second match to return ALL of the sub-matches but it only returns the last one
+  # The only way around this that I can think of is to parse the regex and handle it programmatically. That is, take the regex, find the {{(regex)*}} part and turn it into multiple match statements.
+
+Pros
+ 
+  * Only one grammar and no new rules
+
+Cons
+
+  * Hard to implement
+  * Possibly hard to write the grammar (not intuitive)
