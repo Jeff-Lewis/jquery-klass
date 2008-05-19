@@ -21,6 +21,10 @@ Approaches to parsing nested markup like bullets, numbered lists and indented co
   # Use a nest_html to determine the nesting html (e.g. "&lt;ul&gt;$1&lt;/ul&gt;"
   # Use a item_html to determine the item html (e.g. "&lt;li&gt;$1&lt;/li&gt;"
 
+Pros
+
+  * Easy to write grammar
+
 Weaknesses
 
   * Need two grammars
