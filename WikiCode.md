@@ -1,0 +1,143 @@
+# Solar Markup Language (SML) #
+
+## Goals ##
+
+  * Simple, consistent and easy to remember
+  * Easy to write a parser (will speed adoption)
+  * Quick to parse (many of the rules are consistent so very few exceptional cases).
+  * Have rules for how it should behave when there is potentially conflicting syntax. The implementation should NOT be the rules. Syntax rules should be submittable as a W3C standard.
+  * You can write rules about SML in SML
+
+## Inline Formatting ##
+
+### Styles ###
+
+For consistency, almost all wiki code is accomplished by doubling up characters. This removes the confusion in most wiki markup code where some items are doubled and some are single. This also removes the parsing problems for many edge cases like `*` being the start of a bullet or the bolding of a few characters (e.g. this is present in Google code markup).
+
+```
+**bold**
+''Italic''
+__underline__
+~~strike~~
+``code``
+^^superscript^^
+,,subscript,,
+||inline box||
+```
+
+### Links ###
+
+Anything in double square brackets is made into a link.
+
+Do not support camel cased wiki links. I frickin' HATE wiki links and think this is the worst commonly adopted wiki markup practice. I have to escape my company name MeZine and the language JavaScript all the time. There are so many camel cased words in common use today.
+
+```
+[[linkToWikiPage]]
+[[www.google.com]]
+[[Google|www.google.com]]
+```
+
+Some things that look like links are automatically converted to links
+
+```
+http://www.google.com/
+user@email.com
+
+but NOT: IHateCamelCaseWikiLinks
+```
+
+You can link to place in a page by placing them in double-hashes (#). "top" is always reserved for the top of the page. Headings are automatically converted into internal link destinations.
+
+_Don't love it_
+
+```
+##top## returns user to top
+##My Heading## jumps user to the heading with text "My Heading"
+##my heading## is case insensitive for ease of use.
+```
+
+### Special Objects ###
+
+Depending on the page, special objects can be included in a page. Special objects are included by using double parantheses. I chose this because they show you the money with a full object.
+
+```
+((contents))
+((whatsnew))
+```
+
+### Images ###
+
+```
+
+```
+
+## Line Based Formatting ##
+
+These types of formatting are based on the first characters that are present on a line. In most cases, it looks for the first character on a line with the exception of bullets which are the first two characters (a symbol and then a space).
+
+### Headings ###
+
+I like the ! (bang) style headings because they are easy to type and fairly easy to read. You don't have problems like matching beginning == with ending ones. You also don't have the problem with underline versions where you need to adjust the length of the underlines when you change the heading. Strictly speaking you don't have to but it just looks and feels wrong.
+
+```
+!Heading Level 1
+!!Heading Level 2
+!!!Heading Level 3
+```
+
+### Bullets ###
+
+```
+* Normal
+* Bullets
+
+# Numbered
+# Bullets
+```
+
+### Tables ###
+
+```
+|description|price|quantity|total|
+|T-shirt|5.00|2|25.00|
+|Socks|1.00|2|2.00|
+|Total|||27.00|
+```
+
+### Dividers ###
+
+A single dash or a line with only dashes will convert into an 
+
+&lt;hr&gt;
+
+ divider.
+
+```
+--
+```
+
+## Multiline or Block Based Formatting ##
+
+```
+==
+Preformatted verbatim text goes within
+the double == lines.
+==
+```
+
+## Writing the Parser ##
+
+The nice thing about these rules is they tend not to overlap. When writing the parser, one should do all the line based parsing first.
+
+## Symbols Never To Use ##
+
+Anything mathematical. They are too easily and too often used in programming languages and even natural language when present within a line. I've made the exception for line based formatting (the divider is a dash) because this is uncommon. But, for example, c++ is common.
+
+```
+--
+++
+==
+{{
+}}
+Double parantheses can appear in code easily so don't use it to display code like Google does. They use {{{ which is actually uncommon but our goal is to standardized on two of everything.
+```

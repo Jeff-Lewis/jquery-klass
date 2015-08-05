@@ -1,0 +1,8 @@
+## Inline: Style Parsing ##
+
+**The lines in an SML file should be broken up into an array with one line per array entry** Inline parsing cannot break through lines. The reason is that (a) this is rare (b) it is easy to produce invalid html from such cases and (c) they cause a lot of edge case problems with the line based parsing (e.g. bullets, headings, etc.).
+**Should be able to do most of it with a single regex**
+
+## Inline: Link Parsing ##
+
+## Inline: Plugin Parsing ##

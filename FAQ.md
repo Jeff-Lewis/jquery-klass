@@ -1,0 +1,31 @@
+# Klass FAQ #
+
+**Why is the plugin called "klass" with a "k" instead of a "c"?**
+
+"class" is a reserved word in JavaScript.
+
+**Why do you have a method named "supe". Wouldn't super have been better?**
+
+"super" is also a reserved word in JavaScript.
+
+My next choice is "parent" but this is used by the "DOM" to refer to the parent window of a frame. Practically speaking, they probably wouldn't clash but somebody might want to refer to the parent window as 'this.parent' in which case it would kill the 'this.parent' method.
+
+**Why do you have to pass 'arguments' to call a method in the superclass when using this.up()**
+
+This is an idea from Joshua Gertzen's excellent article on "Object Oriented Super Class Method Calling with JavaScript." There are other ways to accomplish the same thing including a neat method used in the JavaScript Prototype framework.
+
+The Prototype model is cleaner to read but just as difficult to understand (in Prototype's model, you need to add a $super argument on the receiving method, in Klass you need to add an 'arguments' argument in the calling method).
+
+There are two reasons why I went for this model
+
+(a) performance. The Prototype model requires you to run a regular expression which tend to be CPU intensive
+
+(b) code size. Attaching a reference to a function results in smaller code size. Together, these two ideas matched better with jQuery fundamentals.
+
+**Why did you write yet another implementation of class?**
+
+(a) Because there wasn't a good implementation of a class plugin for jQuery that I could find (b) I wanted to guarantee there would be at least one good class plugin for jQuery I can use for my team's development of extendable classes and (c) I really wanted to contribute in an important way to the jQuery community. I have hope that this or a derivative will make it into core.
+
+**Who is the author?**
+
+My name is Sunny Hirai, and I'm the President of with.us and the Chief Executive Officer of MeZine, the developers of CityMax, a popular website builder. I am the author of the code that CityMax rests upon (though it has been taken over long ago) and have built the Ruby-based framework we are developing our new with.us project on.
